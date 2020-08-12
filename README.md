@@ -1,6 +1,8 @@
-# flutter_filter
+# flutter_filter [![](https://img.shields.io/badge/pub-latest-brightgreen)](https://pub.dev/packages/flutter_filter)
 
-A generic filter view representable with dynamic layout presets. 
+![](./doc/logo.png)
+
+> A generic filter view representable with dynamic layout presets. 
 
 ## Getting Started
 
@@ -12,3 +14,4 @@ multiple Flutter or Dart projects.
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+

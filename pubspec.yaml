@@ -1,8 +1,8 @@
 name: flutter_filter
 description: A generic filter view representable with dynamic layout presets. 
 version: 0.0.1
-author:
-homepage:
+author: softmarshmallow <woojoo@softmarshmallow.com>
+homepage: https://github.com/softmarshmallow/flutter-filter
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
