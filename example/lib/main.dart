@@ -52,6 +52,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildItem(String option) {
     var key = Key(option);
+    DropdownButton(items: null, onChanged: null);
     return ChoiceChip(
       label: Text(option),
       selected: selected.contains(key),
