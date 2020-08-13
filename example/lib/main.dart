@@ -34,13 +34,38 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-          ],
-        ),
-      ),
+      body: Center(child: buildBody()),
+    );
+  }
+
+  List<String> filters = ["1", "2", "3", "4"];
+  List<Key> selected = [];
+
+  Widget buildBody() {
+    List<Widget> chips = [];
+    filters.forEach((element) {
+      chips.add(buildItem(element));
+    });
+
+    return Wrap(children: chips);
+  }
+
+  Widget buildItem(String option) {
+    var key = Key(option);
+    return ChoiceChip(
+      label: Text(option),
+      selected: selected.contains(key),
+      onSelected: (s) {
+        // todo check existence
+
+        setState(() {
+          if (s) {
+            selected.add(key);
+          } else {
+            selected.remove(key);
+          }
+        });
+      },
     );
   }
 }
