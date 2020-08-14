@@ -4,6 +4,19 @@
 
 > A generic filter view representable with dynamic layout presets. 
 
+
+## Installation
+
+```yaml
+dependencies:
+  flutter_filter: latest
+```
+
+
+## References
+[pinterest](https://www.pinterest.com/official_softmarshmallow/flutter-filters/)
+
+
 ## Getting Started
 
 This project is a starting point for a Dart
