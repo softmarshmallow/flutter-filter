@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_remote_ui/flutter_remote_ui.dart' as rui;
+import 'demo/guideme.dart';
 
 void main() {
   runApp(ExampleApp());
@@ -13,60 +15,36 @@ class ExampleApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        Guideme.routeName: (c) => Guideme(),
+      },
+      home: Home(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class Home extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  State<StatefulWidget> createState() => _HomeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("demo home"),
       ),
-      body: Center(child: buildBody()),
+      body: buildBody(),
     );
   }
 
-  List<String> filters = ["1", "2", "3", "4"];
-  List<Key> selected = [];
-
   Widget buildBody() {
-    List<Widget> chips = [];
-    filters.forEach((element) {
-      chips.add(buildItem(element));
-    });
-
-    return Wrap(children: chips);
-  }
-
-  Widget buildItem(String option) {
-    var key = Key(option);
-    DropdownButton(items: null, onChanged: null);
-    return ChoiceChip(
-      label: Text(option),
-      selected: selected.contains(key),
-      onSelected: (s) {
-        // todo check existence
-
-        setState(() {
-          if (s) {
-            selected.add(key);
-          } else {
-            selected.remove(key);
-          }
-        });
+    return ListView.builder(
+      itemBuilder: (c, i) {
+        return rui.RouteRow(title: Text(""), route: "null");
       },
+      itemCount: 1,
     );
   }
 }
